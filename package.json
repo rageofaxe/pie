@@ -1,0 +1,22 @@
+{
+  "name": "pie",
+  "version": "0.0.0",
+  "description": "yeah",
+  "main": "index.js",
+  "dependencies": {
+    "connect": "~3.3.4",
+    "gulp": "~3.8.11",
+    "gulp-coffee": "~2.3.1",
+    "gulp-concat": "~2.5.2",
+    "gulp-livereload": "~3.8.0",
+    "serve-static": "~1.9.2",
+    "gulp-cjsx": "~2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "arlsmith <arlienka@gmail.com>",
+  "license": "MIT"
+}
