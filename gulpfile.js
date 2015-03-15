@@ -22,9 +22,9 @@ gulp.task('coffee2jsx', function() {
 });
 
 gulp.task('watch', function() {
-  //livereload.listen();
-  gulp.watch('src/*.coffee', ['coffee', 'concat']);
-  gulp.watch('src/*.cjsx', ['coffee2jsx', 'concat']);
+  livereload.listen();
+  gulp.watch('src/*.coffee', ['coffee']);
+  gulp.watch('src/*.cjsx', ['coffee2jsx']);
 });
 
 gulp.task('default', function() {
