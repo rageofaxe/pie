@@ -1,0 +1,22 @@
+body {
+    font-family: monospace;
+}
+
+.translate {
+    margin: 19% auto;
+    width: 25%;
+
+    font-size: 2em;
+}
+
+.PlainEditable {
+    border: 0.2em solid #C72ACE;
+    padding: 1em 1em;
+    margin: 1em 0 0;
+}
+
+#app {
+
+  height: 100vh;
+}
+

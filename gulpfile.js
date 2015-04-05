@@ -14,21 +14,29 @@ gulp.task('coffee', function() {
 });
 
 gulp.task('coffee2jsx', function() {
-  gulp.src(['src/Mixins.cjsx', 'src/!(Mixins)*.cjsx'])
+  gulp.src(['src/mixins/*.cjsx', 'src/components/*.cjsx'])
     .pipe(cjsx({bare: true}))//.on('error', gutil.log))
     .pipe(concat('build.jsx'))
     .pipe(gulp.dest('build'))
     .pipe(livereload());
 });
 
+gulp.task('vendor', function() {
+  gulp.src(['src/vendor/*.js'])
+	.pipe(concat('build.js'))
+  .pipe(gulp.dest('build'))
+	.pipe(livereload());
+});
+
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('src/*.coffee', ['coffee']);
-  gulp.watch('src/*.cjsx', ['coffee2jsx']);
+  //gulp.watch('src/*.coffee', ['coffee', 'vendor']);
+  gulp.watch('src/**/*.cjsx', ['coffee2jsx']);
 });
 
 gulp.task('default', function() {
-  gulp.start('coffee');
+  //gulp.start('coffee');
+  gulp.start('vendor');
   gulp.start('coffee2jsx');
   gulp.start('watch');
 });
