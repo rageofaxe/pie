@@ -2,5 +2,8 @@ TextBlock = React.createClass
   render: ->
     <div>
       <PlainEditable className="PTE" noTrim/>
-      <button onClick={@props.next}>Гатова</button>
+      <div className="textblock__buttons">
+        <button onClick={@props.next}>Наступны</button>
+        <button onClick={@props.next}>Захаваць</button>
+      </div>
     </div>

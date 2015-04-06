@@ -1,10 +1,17 @@
 App = React.createClass
   mixins: [Actions]
 
-  getInitialState: -> sentence: ["Hare Krishna", "Hare Rama"]
+  getInitialState: -> sentence: ["Hare Krishna1", "Hare Rama"]
 
   render: ->
-    <Translate>
-      <Sentence>{ @state.sentence[0] }</Sentence>
-      <TextBlock next={@next}></TextBlock>
-    </Translate>
+    <div>
+      <MainBar>
+          <Menu/>
+      </MainBar>
+
+      <Translate>
+        <Title>Krishnaloka</Title>
+        <Sentence>{ @state.sentence[0] }</Sentence>
+        <TextBlock next={@next}></TextBlock>
+      </Translate>
+    </div>
