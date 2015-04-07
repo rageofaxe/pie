@@ -5,9 +5,11 @@ body {
 
 .translate {
     margin: 19% auto;
-    width: 33%;
+    width: 50%;
     font-size: 2em;
 }
+
+.sentence {cursor: pointer; color: #333}
 
 .title {
     font-style: italic;
@@ -15,26 +17,59 @@ body {
 }
 
 .PlainEditable {
-    border: 0.2em solid #000 ;
+    border: 0.2em solid #333 ;
     padding: 1em 1em;
     margin: 1em 0 0.5em;
 }
 
 .PlainEditable:hover {
-    border: 0.2em solid #C72ACE;
+    border: 0.2em solid #E57EE9;
 }
 
 .PlainEditable:focus {
-    border: 0.2em solid #C72ACE;
+    border: 0.2em solid #E57EE9;
     outline:none;
 }
 
 .mainbar {
-  border-top: 0.5em solid #C72ACE;
+  border-top: 0.5em solid #E57EE9;
   width: 100%;
   height: 2em;
-  padding: 1em;
 }
+
+.menu-icon {
+  position: fixed;
+  top: 1.5em;
+  left: 1.5em;
+}
+
+.close-icon
+{
+  display:block;
+  box-sizing:border-box;
+  width:2em;
+  height:2em;
+  margin: 1em;
+  position: absolute;
+  border-radius:100%;
+  background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
+  transition: all 0.3s ease;
+}
+
+.menu {
+  position: fixed;
+  background: #333;
+  width: 25%;
+  height: 100%;
+  top: 0;
+  border-top: 0.5em solid #E57EE9;
+}
+
+.next-sentence, .save-sentence {font-size: 1em; cursor: pointer}
+.save-sentence:hover {font-weight: bolder}
+.next-sentence:hover {font-weight: bolder}
+.next-sentence {color: #444}
+.save-sentence {color: #E57EE9}
 
 .textblock__buttons {
   margin: 0 auto;
@@ -45,30 +80,17 @@ body {
   font-size: 0.6em;
 }
 
-.hamburger {
-    position: relative;
-    display: inline-block;
-    width: 2em;
-    height: 1.2em;
-    border-top: 0.2em solid #aaa;
-    border-bottom: 0.2em solid #aaa;
-    cursor: pointer;
+.hamburger {display: inline-block;width: 2em;height: 1.2em;border-top: 0.2em solid #aaa;border-bottom: 0.2em solid #aaa;cursor: pointer;}
+.hamburger:before {content: "";position: absolute;top: 0.55em;left: 0px;width: 100%;border-top: 0.2em solid #aaa;}
+.hamburger:hover {border-top: 0.2em solid #333;border-bottom: 0.2em solid #333;}
+.hamburger:hover::before {border-top: 0.2em solid #333;}
+
+@media screen and (max-width: 980px) {
+  .translate {width: 66%;}
+  .menu {width: 50%;}
 }
 
-.hamburger:before {
-    content: "";
-    position: absolute;
-    top: 0.55em;
-    left: 0px;
-    width: 100%;
-    border-top: 0.2em solid #aaa;
-}
-
-.hamburger:hover {
-    border-top: 0.2em solid #000;
-    border-bottom: 0.2em solid #000;
-}
-
-.hamburger:hover::before {
-    border-top: 0.2em solid #000;
+@media screen and (max-width: 700px) {
+  .translate {width: 99%;}
+  .menu {width: 100%;}
 }
