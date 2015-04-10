@@ -11,8 +11,7 @@
     "gulp-livereload": "~3.8.0",
     "serve-static": "~1.9.2",
     "gulp-cjsx": "~2.0.0",
-    "react": "~0.13.1",
-    "react-plain-editable": "~2.0.0"
+    "react": "~0.13.1"
   },
   "devDependencies": {},
   "scripts": {

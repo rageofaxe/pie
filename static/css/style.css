@@ -17,22 +17,22 @@ body {
 }
 
 .PlainEditable {
-    border: 0.2em solid #333 ;
+    border: 0.1em solid #333 ;
     padding: 1em 1em;
     margin: 1em 0 0.5em;
 }
 
 .PlainEditable:hover {
-    border: 0.2em solid #E57EE9;
+    border: 0.1em solid #E57EE9;
 }
 
 .PlainEditable:focus {
-    border: 0.2em solid #E57EE9;
+    border: 0.1em solid #E57EE9;
     outline:none;
 }
 
 .mainbar {
-  border-top: 0.5em solid #E57EE9;
+  border-top: 0.3em solid #E57EE9;
   width: 100%;
   height: 2em;
 }
@@ -50,6 +50,7 @@ body {
   width:2em;
   height:2em;
   margin: 1em;
+  margin-left: 1.25em;
   position: absolute;
   border-radius:100%;
   background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
@@ -62,18 +63,18 @@ body {
   width: 25%;
   height: 100%;
   top: 0;
-  border-top: 0.5em solid #E57EE9;
+  border-top: 0.25em solid #E57EE9;
 }
 
-.next-sentence, .save-sentence {font-size: 1em; cursor: pointer}
+.skip-sentence, .save-sentence {font-size: 1em; cursor: pointer}
 .save-sentence:hover {font-weight: bolder}
-.next-sentence:hover {font-weight: bolder}
-.next-sentence {color: #444}
+.skip-sentence:hover {font-weight: bolder}
+.skip-sentence {color: #444}
 .save-sentence {color: #E57EE9}
 
 .textblock__buttons {
   margin: 0 auto;
-  width: 205px;
+  width: 13em;
 }
 
 .textblock__buttons button {

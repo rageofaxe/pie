@@ -9,6 +9,12 @@ Menu = React.createClass
 
   #componentWillUnmount: -> window.removeEventListener("click", @clickOutside, true)
 
+  showMenu: (e) ->
+    if((e.keyCode is 77 or e.keyCode is 109)) then @toggleMenu()
+
+  componentDidMount: ->
+    document.addEventListener("keypress", @showMenu)
+
   render: ->
     <div>
       <div className="hamburger menu-icon" onClick={@toggleMenu}></div>

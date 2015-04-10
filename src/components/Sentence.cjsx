@@ -1,2 +1,3 @@
 Sentence = React.createClass
-  render: -> <span className="sentence">{@props.children}</span>
+
+  render: -> <span  className="sentence">{@props.children}</span>

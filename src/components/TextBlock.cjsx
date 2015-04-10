@@ -1,8 +1,11 @@
 TextBlock = React.createClass
   getInitialState: -> text: ""
 
-  #change: (event) ->
-  #  @setState(text: event.target.innerText.replace("a", "B"))
+  ctrlEnter: (event) ->
+    if((event.ctrlKey) && ((event.keyCode == 0xA)||(event.keyCode == 0xD))) then @props.next()
+
+  componentDidMount: ->
+    document.addEventListener("keypress", @ctrlEnter)
 
   render: ->
     <div>
@@ -12,7 +15,8 @@ TextBlock = React.createClass
       <div className="textblock__buttons">
         <button onClick={@props.next} style={{display: 'none'}}>Наступны</button>
         <button onClick={@props.next} style={{display: 'none'}}>Захаваць</button>
-        <span className="next-sentence">Наступны</span>
-        <span className="save-sentence">Захаваць</span>
+        <span className="skip-sentence" onClick={@props.next} title="(ctrl + ->)">Прапусціць</span>
+        <span className="skip-sentence">, </span>
+        <span className="save-sentence" onClick={@props.next} title="(ctrl + enter)" >Захаваць</span>
       </div>
     </div>

@@ -1,17 +1,26 @@
 App = React.createClass
   mixins: [Actions]
 
-  getInitialState: -> sentence: ["Hare Krishna1", "Hare Rama"]
+  getInitialState: -> sentence: ["Hare Krishna", "Hare Rama"]
+
+  getDefaultProps: ->
+    source: "http://date.jsontest.com/"
+
+  tick: ->
+    $.get @props.source, ((result) ->
+      @setState(result: result.time)
+    ).bind(@)
+    return
 
   render: ->
     <div>
       <MainBar>
-          <Menu/>
+        <Menu/>
       </MainBar>
 
       <Translate>
         <Title>Krishnaloka</Title>
-        <Sentence>{ @state.sentence[0] }</Sentence>
-        <TextBlock next={@next}></TextBlock>
+        <Sentence>{ @state.result }</Sentence>
+        <TextBlock next={@tick}></TextBlock>
       </Translate>
     </div>
